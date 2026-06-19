@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export default function BotonFlotante(props: {
   alPresionar: () => void;
-  posicion: string;
+  posicion?: string;
   color?: string;
   texto: string;
   lifes: number;
@@ -16,9 +16,7 @@ export default function BotonFlotante(props: {
         onPress={props.alPresionar}
         style={[
           styles.boton,
-          props.posicion == "izq" ? styles.izq : styles.der,
           props.color == "" ? styles.verde : { backgroundColor: props.color },
-          props.abajo == 1 ? styles.abajo : styles.arriba,
         ]}
       >
         <Text style={styles.texto}>{props.texto}</Text>
@@ -36,9 +34,10 @@ const styles = StyleSheet.create({
   },
   texto: {
     fontSize: 46,
+    color: "#fff",
   },
   boton: {
-    color: "#011201",
+    color: "#070707",
     backgroundColor: "#2be60e",
     padding: 15,
     borderRadius: 15,
@@ -46,22 +45,9 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 15, height: 15 },
     shadowOpacity: 0.3,
   },
-  izq: {
-    left: 50,
-    position: "absolute",
-  },
-  der: {
-    right: 50,
-    position: "absolute",
-  },
-  verde: {
-    backgroundColor: "#2be60e",
-  },
-
-  abajo: {
-    bottom: 50,
-  },
-  arriba: {
-    top: 15,
-  },
+  izq: {},
+  der: {},
+  verde: {},
+  abajo: {},
+  arriba: {},
 });

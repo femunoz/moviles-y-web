@@ -8,27 +8,30 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.texto}>Vidas: {vidas}</Text>
-      <BotonFlotante
-        lifes={vidas}
-        alPresionar={() => setVidas(vidas - 1)}
-        texto="-"
-        posicion="izq"
-        color="#f52020"
-        abajo={0}
-      ></BotonFlotante>
-      <BotonFlotante
-        lifes={vidas}
-        alPresionar={() => setVidas(vidas + 1)}
-        texto="+"
-        posicion="der"
-        abajo={0}
-      ></BotonFlotante>
+      <View style={styles.right}>
+        <BotonFlotante
+          lifes={vidas}
+          alPresionar={() => setVidas(vidas - 1)}
+          texto="-"
+          color="#f52020"
+          abajo={0}
+        ></BotonFlotante>
+
+        <BotonFlotante
+          lifes={vidas}
+          alPresionar={() => setVidas(vidas + 1)}
+          texto="+"
+          posicion="der"
+          color="#0bf12d"
+          abajo={0}
+        ></BotonFlotante>
+      </View>
       <BotonFlotante
         lifes={vidas}
         alPresionar={() => setVidas(20)}
         texto="Reset"
         posicion="izq"
-        color="#f52020"
+        color="#2112f0"
         abajo={1}
       ></BotonFlotante>
       <StatusBar style="auto" />
@@ -45,5 +48,10 @@ const styles = StyleSheet.create({
   },
   texto: {
     fontSize: 46,
+  },
+  right: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingBlock: 10,
   },
 });
