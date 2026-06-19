@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   boton: {
     color: "#070707",
     backgroundColor: "#2be60e",
-    padding: 15,
+    padding: 30,
     borderRadius: 15,
     shadowColor: "black",
     shadowOffset: { width: 15, height: 15 },
